@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <a href="/users/add/">Добавить нового пользователя</a>
+    {% for u in users %}
+            <div class="col-lg-12 col-sm-12 col-xs-12" style="">
+                {{ u.name }}, {{ u.email }}
+            </div>
+    {% endfor %}
+    {% if users|length < 1 %}
+        <p class="text-info text-center">No users found.</p>
+    {% endif %}
+{% endblock %}

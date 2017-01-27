@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <a href="/goods/add/">Добавить новый товар</a>
+    {% for g in goods %}
+            <div class="col-lg-12 col-sm-12 col-xs-12" style="">
+                {{ g.name }}, {{ g.price }}
+            </div>
+    {% endfor %}
+    {% if goods|length < 1 %}
+        <p class="text-info text-center">No goods found.</p>
+    {% endif %}
+{% endblock %}
